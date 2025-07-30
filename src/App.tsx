@@ -1,9 +1,21 @@
-import React from 'react'
+import Form from "./component/Form";
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from "./component/Dashboard";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Form />} />
+          <Route path="/dash" element={<Dashboard />} />
+        </Routes>
+      </BrowserRouter>
 
-export default App
+      <ToastContainer autoClose={3000} position="top-right" />
+    </>
+  );
+};
+
+export default App;
